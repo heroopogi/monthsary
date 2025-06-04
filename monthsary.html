@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy 18th Monthsary Bab</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #ffe6f0;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    #clickButton {
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #ff69b4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #panel {
+      display: none;
+      background: #ffb6c1;
+      color: white;
+      padding: 30px;
+      border-radius: 20px;
+      margin-top: 30px;
+      max-width: 600px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    #musicButton {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #fff0f5;
+      color: #ff1493;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    audio {
+      display: none;
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      transform: rotate(45deg);
+      animation: floatUp 3s ease-in infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-200px) scale(1.5) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <button id="clickButton">Click me!</button>
+
+  <div id="panel">
+    <p>
+      Hi Bab! It's our 18th month Monthsary! I'm always happy and grateful to have you in my life. 
+      This weeks, we've experienced moments that hurt us and make us sad. I'm sorry always bab for hurting you :( 
+      I'm always trying my best for us and I will do anything to overcome all the problems that we'll encounter. 
+      I love you always bab. I always got you when you have problems, Hero is always here to listen to all your rants, 
+      and I am always here when you need me bab. Happy 18th Monthsary, Bab. 
+      Here’s to many more months and years of love, healing, growth, and happiness.
+    </p>
+    <button id="musicButton">Play "Here With Me" by d4vd</button>
+    <audio id="audioPlayer" src="d4vd - Here With Me (Instrumental).mp3" controls></audio>
+  </div>
+
+  <script>
+    const clickButton = document.getElementById("clickButton");
+    const panel = document.getElementById("panel");
+    const musicButton = document.getElementById("musicButton");
+    const audioPlayer = document.getElementById("audioPlayer");
+
+    clickButton.addEventListener("click", () => {
+      clickButton.style.display = "none";
+      panel.style.display = "block";
+      createHearts();
+    });
+
+    musicButton.addEventListener("click", () => {
+      audioPlayer.style.display = "block";
+      audioPlayer.play();
+    });
+
+    function createHearts() {
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = window.innerHeight + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 3000);
+      }
+    }
+  </script>
+
+</body>
+</html>
