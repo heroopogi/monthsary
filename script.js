@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Change the content to show a sweet message
         const invitation = document.querySelector('.invitation');
         invitation.innerHTML = `
-            <h1>Yay! I'm so happy! ❤️</h1>
+            <h1>Yay!</h1>
             <div class="heart"></div>
             <h2>I can't wait to celebrate with you!</h2>
-            <p>Thank you for being the most amazing girlfriend and for making these 2 years absolutely magical.</p>
-            <p>I love you more and more each day! 💑</p>
+            <p>Thank you for being the most amazing girlfriend and for making these 2 years absolutely magical and meaningful.</p>
+            <p>I love you more and more each day!</p>
         `;
     });
 });
