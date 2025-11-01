@@ -82,36 +82,38 @@ p {
 
 .heart {
     position: relative;
-    width: 100px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     margin: 2rem auto;
+    transform: rotate(45deg);
+    animation: heartbeat 1.2s infinite;
 }
 
 .heart:before,
 .heart:after {
     position: absolute;
     content: "";
-    left: 50px;
-    top: 0;
-    width: 50px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: #ff4b6e;
-    border-radius: 50px 50px 0 0;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
-    animation: heartbeat 1s infinite;
+    border-radius: 50%;
+}
+
+.heart:before {
+    left: -30px;
 }
 
 .heart:after {
-    left: 0;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
+    top: -30px;
 }
 
 @keyframes heartbeat {
-    0% { transform: rotate(-45deg) scale(1); }
-    50% { transform: rotate(-45deg) scale(1.1); }
-    100% { transform: rotate(-45deg) scale(1); }
+    0% { transform: rotate(45deg) scale(1); }
+    15% { transform: rotate(45deg) scale(1.25); }
+    30% { transform: rotate(45deg) scale(1); }
+    45% { transform: rotate(45deg) scale(1.25); }
+    60% { transform: rotate(45deg) scale(1); }
+    100% { transform: rotate(45deg) scale(1); }
 }
 
 /* Responsive */
